@@ -1,0 +1,34 @@
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title>Spring MVC Application - Edit Post</title>
+</head>
+
+<header th:replace="layout :: logged-in"></header>
+<body>
+<h1>Edit Post</h1>
+
+<form th:method="put" th:object="${post}" th:action="@{/editpost(postId=${post.id})}">
+    <div>Name:</div>
+    <div><input type="text" id="name" name="name" /></div>
+
+    <div>Age:</div>
+    <div><input type="number" id="age" name="age" /></div>
+
+    <div>Email:</div>
+    <div><input type="text" id="email" name="email" /></div>
+
+    <div>Address:</div>
+    <div><input type="text" id="address" name="address" /></div>
+
+    <div>Phone Number:</div>
+    <div><input type="number" id="number" name="number" /></div>
+
+
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+</form>
+
+</body>
+</html>
